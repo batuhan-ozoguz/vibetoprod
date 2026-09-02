@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vibetoprod"
+version = "0.0.1"
+description = "From vibe to production — analyzes your repo and plans the services, costs and architecture it needs to go live."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Batuhan Özoğuz" }]
+requires-python = ">=3.9"
+keywords = ["vibe-coding", "deployment", "infrastructure", "cost-estimate", "architecture-diagram"]
+
+[project.urls]
+Homepage = "https://vibetoprod.dev"
+Repository = "https://github.com/batuhan-ozoguz/vibetoprod"
+
+[project.scripts]
+vibetoprod = "vibetoprod:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,19 @@
+{
+  "name": "vibetoprod",
+  "version": "0.0.1",
+  "description": "From vibe to production — analyzes your repo and plans the services, costs and architecture it needs to go live.",
+  "bin": {
+    "vibetoprod": "bin/vibetoprod.js",
+    "v2p": "bin/vibetoprod.js"
+  },
+  "files": ["bin"],
+  "keywords": ["vibe-coding", "deployment", "infrastructure", "cost-estimate", "architecture-diagram"],
+  "homepage": "https://vibetoprod.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batuhan-ozoguz/vibetoprod.git"
+  },
+  "author": "Batuhan Özoğuz",
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}
