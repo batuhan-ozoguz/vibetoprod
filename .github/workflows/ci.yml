@@ -1,0 +1,44 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        node: [20, 22, 24]
+        os: [ubuntu-latest]
+        include:
+          - node: 22
+            os: windows-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+      - run: npm pack --dry-run
+
+  tarball-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: pack and install the tarball as a user would
+        run: |
+          npm pack
+          mkdir -p /tmp/smoke && cd /tmp/smoke
+          npm install "$GITHUB_WORKSPACE"/vibetoprod-*.tgz
+      - name: run against a local fixture
+        run: |
+          mkdir -p /tmp/fixture
+          printf '{"dependencies":{"next":"15.0.0","@supabase/supabase-js":"2.0.0"}}' > /tmp/fixture/package.json
+          cd /tmp/smoke
+          ./node_modules/.bin/vibetoprod /tmp/fixture --json | grep -q '"database"'
+          ./node_modules/.bin/vibetoprod /tmp/fixture --html /tmp/plan.html
+          grep -q "<svg" /tmp/plan.html

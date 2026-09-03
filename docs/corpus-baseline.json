@@ -1,0 +1,390 @@
+{
+  "pinned": "2026-09-03",
+  "results": {
+    "OtienoBryan/spares_client": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-react-router"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "NassimEH/WeListenMusic": {
+      "needs": [
+        "database",
+        "hosting",
+        "server",
+        "storage"
+      ],
+      "rules": [
+        "db-prisma",
+        "hosting-react-router",
+        "server-express",
+        "storage-cloudinary"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "Ramadan82/bluvill-connect-hub": {
+      "needs": [
+        "auth",
+        "database",
+        "hosting",
+        "storage"
+      ],
+      "rules": [
+        "hosting-react-router",
+        "supabase-auth",
+        "supabase-db",
+        "supabase-storage"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "aMorDineroX/modern-tontine-app-31": {
+      "needs": [
+        "auth",
+        "database",
+        "hosting",
+        "storage"
+      ],
+      "rules": [
+        "hosting-react-router",
+        "supabase-auth",
+        "supabase-db",
+        "supabase-storage"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "criptogus/liquid-ai": {
+      "needs": [
+        "ai-api",
+        "cache",
+        "cron",
+        "database",
+        "email",
+        "hosting",
+        "realtime",
+        "server",
+        "storage"
+      ],
+      "rules": [
+        "ai-env-anthropic",
+        "ai-env-google",
+        "ai-env-openai",
+        "ai-google",
+        "ai-openai",
+        "cache-ioredis",
+        "cron-node-cron",
+        "db-pg",
+        "email-resend",
+        "hosting-react-router",
+        "realtime-socketio",
+        "server-express",
+        "server-python-reqs",
+        "storage-s3-sdk"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "gsm-fullweb/careconnect": {
+      "needs": [
+        "auth",
+        "database",
+        "hosting",
+        "storage"
+      ],
+      "rules": [
+        "hosting-react-router",
+        "supabase-auth",
+        "supabase-db",
+        "supabase-storage"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "thefixer3x/sync-plan-flow": {
+      "needs": [
+        "ai-api",
+        "hosting"
+      ],
+      "rules": [
+        "ai-env-anthropic",
+        "ai-env-openai",
+        "hosting-react-router"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "sanjaygoud05/CarbonIQ": {
+      "needs": [
+        "ai-api",
+        "database",
+        "email",
+        "hosting",
+        "server"
+      ],
+      "rules": [
+        "ai-env-google",
+        "ai-google",
+        "db-prisma",
+        "email-nodemailer",
+        "hosting-react-router",
+        "server-express",
+        "server-python-reqs"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "yashgondalia/lingofun-academy-diya": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-react-router"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "mugisha-gordon/semkat-hub": {
+      "needs": [
+        "auth",
+        "database",
+        "hosting",
+        "storage"
+      ],
+      "rules": [
+        "firebase-auth",
+        "firebase-db",
+        "firebase-storage",
+        "hosting-react-router",
+        "supabase-auth",
+        "supabase-db",
+        "supabase-storage"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "francisco-dev-ao/projectofinalah": {
+      "needs": [
+        "auth",
+        "database",
+        "email",
+        "hosting",
+        "storage"
+      ],
+      "rules": [
+        "email-nodemailer",
+        "hosting-react-router",
+        "supabase-auth",
+        "supabase-db",
+        "supabase-storage"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "kartikramachandrula/thynk": {
+      "needs": [
+        "hosting",
+        "server"
+      ],
+      "rules": [
+        "hosting-react-router",
+        "server-express",
+        "server-python-reqs"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "Walbrkt/HackBerlin_Solar": {
+      "needs": [
+        "hosting",
+        "server"
+      ],
+      "rules": [
+        "hosting-react-router",
+        "server-python-reqs"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "yenom4/Kairos-website": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-react-router"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "alexcj10/Quillon": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-vite"
+      ],
+      "hosting": "hosting-vite"
+    },
+    "MustafaPinjari/Tiffin-Tracker": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-react-router"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "hassana123/tailorpal": {
+      "needs": [
+        "auth",
+        "database",
+        "hosting",
+        "storage"
+      ],
+      "rules": [
+        "firebase-auth",
+        "firebase-db",
+        "firebase-storage",
+        "hosting-react-router"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "Monisha-JR/Task_Management_With_AI": {
+      "needs": [
+        "hosting",
+        "server"
+      ],
+      "rules": [
+        "hosting-angular",
+        "server-java-maven"
+      ],
+      "hosting": "hosting-angular"
+    },
+    "prem22k/MemeCoin-Roulette": {
+      "needs": [
+        "hosting",
+        "server"
+      ],
+      "rules": [
+        "hosting-react-router",
+        "server-express"
+      ],
+      "hosting": "hosting-react-router"
+    },
+    "matevzpoljanc/revolut-savings-account-tax-reports": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-nextjs"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "unep-grid/grid_stat": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-astro"
+      ],
+      "hosting": "hosting-astro"
+    },
+    "famasya/compare-openrouter-models": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-cloudflare-wrangler"
+      ],
+      "hosting": "hosting-cloudflare-wrangler"
+    },
+    "gnosis/crc-labs-prediction-markets": {
+      "needs": [
+        "hosting",
+        "web3-rpc"
+      ],
+      "rules": [
+        "hosting-nextjs",
+        "web3-evm"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "FattybuthappOG/nouncil": {
+      "needs": [
+        "hosting",
+        "web3-rpc"
+      ],
+      "rules": [
+        "hosting-nextjs",
+        "web3-evm"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "ata360brasil/v0-ata-360-chatbot-ui": {
+      "needs": [
+        "ai-api",
+        "auth",
+        "database",
+        "hosting",
+        "storage"
+      ],
+      "rules": [
+        "ai-env-anthropic",
+        "ai-env-google",
+        "ai-env-openai",
+        "hosting-nextjs",
+        "supabase-auth",
+        "supabase-db",
+        "supabase-storage"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "Shreyas-prog108/stock-alpha": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-nextjs"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "roy2392/llm-dj-mcp": {
+      "needs": [
+        "ai-api",
+        "hosting"
+      ],
+      "rules": [
+        "ai-sdk-scoped",
+        "ai-vercel-sdk",
+        "hosting-nextjs"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "agustinkassis/lawallet-auditor": {
+      "needs": [
+        "hosting"
+      ],
+      "rules": [
+        "hosting-nextjs"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "ViggoZ/json-translate": {
+      "needs": [
+        "ai-api",
+        "hosting"
+      ],
+      "rules": [
+        "ai-openai",
+        "hosting-nextjs"
+      ],
+      "hosting": "hosting-nextjs"
+    },
+    "nuance-dev/guia": {
+      "needs": [],
+      "rules": [],
+      "hosting": null
+    },
+    "kamilstanuch/DesktopDeclutter": {
+      "needs": [],
+      "rules": [],
+      "hosting": null
+    },
+    "drewster99/chessgame": {
+      "needs": [],
+      "rules": [],
+      "hosting": null
+    }
+  }
+}

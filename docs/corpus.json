@@ -6,55 +6,64 @@
       "full_name": "OtienoBryan/spares_client",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies (verified via REST); README is the stock 'Welcome to your Lovable project' with URL lovable.dev/projects/45985c39-385b-46f3-b3cd-2de3d109cbc7",
-      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query, recharts, zod, shadcn/radix; TypeScript, ~15MB repo (spare-parts client app)"
+      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query, recharts, zod, shadcn/radix; TypeScript, ~15MB repo (spare-parts client app)",
+      "pinned_sha": "1fc4f13002fdc0e8e7dd2c216d98bde6ff463f2a"
     },
     {
       "full_name": "NassimEH/WeListenMusic",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies; README carries the Lovable clone-instructions boilerplate (French)",
-      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query (+devtools), recharts, zod, shadcn/radix; music streaming UI"
+      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query (+devtools), recharts, zod, shadcn/radix; music streaming UI",
+      "pinned_sha": "cf0df1b94c31691df17f7e93f5e693ad8fb4b594"
     },
     {
       "full_name": "Ramadan82/bluvill-connect-hub",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies (code search hit + REST verify)",
-      "stack_hints": "supabase (@supabase/supabase-js), vite + react-swc, react-router-dom, tanstack-query, recharts, zod; 'university system' app"
+      "stack_hints": "supabase (@supabase/supabase-js), vite + react-swc, react-router-dom, tanstack-query, recharts, zod; 'university system' app",
+      "pinned_sha": "a3aa757f6e9a9542d3fe2373600be8adf135d646"
     },
     {
       "full_name": "aMorDineroX/modern-tontine-app-31",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies; repo name matches Lovable's generated-name pattern (slug + number)",
-      "stack_hints": "supabase, vite + react-swc, react-router-dom, tanstack-query, recharts, zod; group-savings (tontine) finance app"
+      "stack_hints": "supabase, vite + react-swc, react-router-dom, tanstack-query, recharts, zod; group-savings (tontine) finance app",
+      "pinned_sha": "2760bfa8d15b026d46fb899d62ccd047d9aab7c3"
     },
     {
       "full_name": "criptogus/liquid-ai",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies",
-      "stack_hints": "vite + react-swc, tanstack-query, recharts, zod, vitest, vite-plugin-compression; has CI/issue templates (post-Lovable hardening)"
+      "stack_hints": "vite + react-swc, tanstack-query, recharts, zod, vitest, vite-plugin-compression; has CI/issue templates (post-Lovable hardening)",
+      "pinned_sha": "13c25075519a245b57490e6fd8622db7f406d083"
     },
     {
       "full_name": "gsm-fullweb/careconnect",
       "generator": "lovable",
       "evidence": "lovable-tagger devDependency + README 'Welcome to your Lovable project' with URL lovable.dev/projects/12084d97-67cf-4d13-9849-250fea0cb685",
-      "stack_hints": "supabase, vite + react-swc, react-router-dom, tanstack-query, recharts, zod; caregiver marketplace"
+      "stack_hints": "supabase, vite + react-swc, react-router-dom, tanstack-query, recharts, zod; caregiver marketplace",
+      "pinned_sha": "066743abbf5f359f186e59e1712676bd79784a83"
     },
     {
       "full_name": "thefixer3x/sync-plan-flow",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies",
-      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query, recharts, zod; 'AI productivity companion' — likely calls an LLM API from edge functions"
+      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query, recharts, zod; 'AI productivity companion' — likely calls an LLM API from edge functions",
+      "pinned_sha": "ee00dd201d634f536871be8b62be71587d71ac63"
     },
     {
       "full_name": "sanjaygoud05/CarbonIQ",
       "generator": "lovable",
       "evidence": "lovable-tagger devDependency + stock Lovable README (URL placeholder REPLACE_WITH_PROJECT_ID)",
-      "stack_hints": "vite + react-swc, react-router-dom, recharts, zod; small repo (~400KB), carbon-tracking dashboard"
+      "stack_hints": "vite + react-swc, react-router-dom, recharts, zod; small repo (~400KB), carbon-tracking dashboard",
+      "pinned_sha": "283710fd32b0835bba01d134785d3055ebf71198"
     },
     {
       "full_name": "yashgondalia/lingofun-academy-diya",
       "generator": "lovable",
       "evidence": "lovable-tagger devDependency + README 'Welcome to your Lovable project' with URL lovable.dev/projects/ffed6d5c-1049-44a7-b2da-56794e4f54a3",
-      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query, recharts, zod, @originjs/vite-plugin-commonjs; language-learning app, ~9MB"
+      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query, recharts, zod, @originjs/vite-plugin-commonjs; language-learning app, ~9MB",
+      "pinned_sha": "952582dddf57c008c4b28f853e3412a5980cce63"
     },
     {
       "full_name": "nobdysfulz/pulse-intelligence",
@@ -66,139 +75,163 @@
       "full_name": "mugisha-gordon/semkat-hub",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies (code search hit + REST verify); README rewritten (real app)",
-      "stack_hints": "supabase + firebase/firebase-admin (dual backend), three.js (@react-three/fiber, drei), vite, tanstack-query, recharts, zod; real-estate super-app with 3D media"
+      "stack_hints": "supabase + firebase/firebase-admin (dual backend), three.js (@react-three/fiber, drei), vite, tanstack-query, recharts, zod; real-estate super-app with 3D media",
+      "pinned_sha": "49c972a20e96b7bc247cd835cae33fc99daa3e2d"
     },
     {
       "full_name": "francisco-dev-ao/projectofinalah",
       "generator": "lovable",
       "evidence": "lovable-tagger devDependency + README 'Welcome to your Lovable project' with URL lovable.dev/projects/1954a3dd-1dad-4c04-9d1c-44461e0165ad",
-      "stack_hints": "supabase, vite + react-swc, react-router-dom, tanstack-query, recharts, zod; ~18MB, hosting/e-commerce style app (Portuguese)"
+      "stack_hints": "supabase, vite + react-swc, react-router-dom, tanstack-query, recharts, zod; ~18MB, hosting/e-commerce style app (Portuguese)",
+      "pinned_sha": "5075c6b1e5eeff1baa5b858557f4b0349fa057d0"
     },
     {
       "full_name": "kartikramachandrula/thynk",
       "generator": "lovable",
       "evidence": "lovable-tagger in a package.json (code search hit + REST verify of frontend package.json)",
-      "stack_hints": "hybrid: Python backend (repo primary language Python) + Lovable vite/react frontend with tanstack-query, recharts, zod; hackathon homework-help app"
+      "stack_hints": "hybrid: Python backend (repo primary language Python) + Lovable vite/react frontend with tanstack-query, recharts, zod; hackathon homework-help app",
+      "pinned_sha": "4957ee4b9d7009e29d0519a6a1673d612c95b061"
     },
     {
       "full_name": "Walbrkt/HackBerlin_Solar",
       "generator": "lovable",
       "evidence": "lovable-tagger in package.json devDependencies; custom hackathon README (real app)",
-      "stack_hints": "three.js (@react-three/fiber, drei, @types/three), vite, tanstack-query, recharts, zod, vitest; photogrammetry solar-roof designer, ~59MB"
+      "stack_hints": "three.js (@react-three/fiber, drei, @types/three), vite, tanstack-query, recharts, zod, vitest; photogrammetry solar-roof designer, ~59MB",
+      "pinned_sha": "5deef2d7c820e4f118cda1499179c008797ce380"
     },
     {
       "full_name": "yenom4/Kairos-website",
       "generator": "lovable",
       "evidence": "lovable-tagger devDependency + README 'Welcome to your Lovable project' with URL lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a7c1b727",
-      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query; marketing/product website, ~12MB"
+      "stack_hints": "vite + react-swc, react-router-dom, tanstack-query; marketing/product website, ~12MB",
+      "pinned_sha": "6e4053e26491c68eb988bcfc28e3a9c7c453ce03"
     },
     {
       "full_name": "alexcj10/Quillon",
       "generator": "bolt",
       "evidence": ".bolt/config.json present at repo root (gh code search hit)",
-      "stack_hints": "React + Vite + Tailwind, react-markdown, local-first notes app with RAG features, TypeScript, 10 stars"
+      "stack_hints": "React + Vite + Tailwind, react-markdown, local-first notes app with RAG features, TypeScript, 10 stars",
+      "pinned_sha": "e711f490b2b182e87dcb9a76b20ea50c80247715"
     },
     {
       "full_name": "MustafaPinjari/Tiffin-Tracker",
       "generator": "bolt",
       "evidence": ".bolt/config.json present at repo root",
-      "stack_hints": "React + Vite + Tailwind, react-router-dom, heroicons; sizable real app (~68MB repo)"
+      "stack_hints": "React + Vite + Tailwind, react-router-dom, heroicons; sizable real app (~68MB repo)",
+      "pinned_sha": "89347d62a1f4adee62b74e0e8f3dbf235cab2067"
     },
     {
       "full_name": "hassana123/tailorpal",
       "generator": "bolt",
       "evidence": ".bolt/config.json present at repo root",
-      "stack_hints": "React + Vite + Tailwind, Firebase (auth/DB), react-redux, react-chartjs-2 — tailoring management app"
+      "stack_hints": "React + Vite + Tailwind, Firebase (auth/DB), react-redux, react-chartjs-2 — tailoring management app",
+      "pinned_sha": "60b6f3c8685c048c39fecfc508a1dc96ef2c4526"
     },
     {
       "full_name": "Monisha-JR/Task_Management_With_AI",
       "generator": "bolt",
       "evidence": ".bolt/config.json present at repo root",
-      "stack_hints": "TypeScript task-management app with AI features, 65 stars"
+      "stack_hints": "TypeScript task-management app with AI features, 65 stars",
+      "pinned_sha": "3a37b17bc84d0e5b0bcbbad45b87bd48291e8cfd"
     },
     {
       "full_name": "prem22k/MemeCoin-Roulette",
       "generator": "bolt",
       "evidence": ".bolt/config.json present at repo root",
-      "stack_hints": "React + Vite frontend plus Express backend with express-rate-limit, TanStack Query, Radix tooltip — game with a real API layer"
+      "stack_hints": "React + Vite frontend plus Express backend with express-rate-limit, TanStack Query, Radix tooltip — game with a real API layer",
+      "pinned_sha": "25b57c717d40c5a940be22cc7bd496e60d74d466"
     },
     {
       "full_name": "matevzpoljanc/revolut-savings-account-tax-reports",
       "generator": "bolt",
       "evidence": ".bolt/config.json present at repo root",
-      "stack_hints": "Next.js + full shadcn/Radix UI kit, TypeScript; real tax-report tool for Revolut savings, 31 stars"
+      "stack_hints": "Next.js + full shadcn/Radix UI kit, TypeScript; real tax-report tool for Revolut savings, 31 stars",
+      "pinned_sha": "35591240a0c520cd229741cfc6368a2246e64a11"
     },
     {
       "full_name": "unep-grid/grid_stat",
       "generator": "bolt",
       "evidence": ".bolt/config.json present at repo root (UNEP GRID org repo)",
-      "stack_hints": "Astro + React + Tailwind + Radix UI, TypeScript — statistics dashboard by a UN environment org"
+      "stack_hints": "Astro + React + Tailwind + Radix UI, TypeScript — statistics dashboard by a UN environment org",
+      "pinned_sha": "21f886c1cdb1af1d5fd6f1a7566464f097a9dbd2"
     },
     {
       "full_name": "famasya/compare-openrouter-models",
       "generator": "v0",
       "evidence": "README: '*Automatically synced with your [v0.dev](https://v0.dev) deployments*' + 'Built with v0.dev' badge linking to v0.dev/chat/projects/eDu8iEpMLGe",
-      "stack_hints": "Next.js deployed via @cloudflare/next-on-pages, shadcn/Radix UI — OpenRouter model comparison app, 10 stars"
+      "stack_hints": "Next.js deployed via @cloudflare/next-on-pages, shadcn/Radix UI — OpenRouter model comparison app, 10 stars",
+      "pinned_sha": "63f2ee83692f9c6fe56ef4249ae16b10d1367097"
     },
     {
       "full_name": "gnosis/crc-labs-prediction-markets",
       "generator": "v0",
       "evidence": "README: v0.dev sync banner + 'Built with v0.dev' badge (v0.dev/chat/projects/Yb6qanI7wU9); Gnosis org repo",
-      "stack_hints": "Next.js + shadcn/Radix UI kit, TypeScript — prediction-markets frontend"
+      "stack_hints": "Next.js + shadcn/Radix UI kit, TypeScript — prediction-markets frontend",
+      "pinned_sha": "edb0bb184426cc1c5462502ce50b751ca9a17c2e"
     },
     {
       "full_name": "FattybuthappOG/nouncil",
       "generator": "v0",
       "evidence": "README: v0.dev sync banner + 'Built with v0.dev' badge (v0.dev/chat/projects/KFKq5ef86bt)",
-      "stack_hints": "Next.js + shadcn/Radix UI, TypeScript; actively pushed (2026-08)"
+      "stack_hints": "Next.js + shadcn/Radix UI, TypeScript; actively pushed (2026-08)",
+      "pinned_sha": "914393b2e109a6d0854ddbbed1981267a5b2e730"
     },
     {
       "full_name": "ata360brasil/v0-ata-360-chatbot-ui",
       "generator": "v0",
       "evidence": "v0- repo name prefix (default v0 export naming) + README retains edited v0 banner 'Automatically synced with your deployments'",
-      "stack_hints": "Next.js + shadcn/Radix UI — chatbot UI, TypeScript"
+      "stack_hints": "Next.js + shadcn/Radix UI — chatbot UI, TypeScript",
+      "pinned_sha": "9812a732ca74c80a200e5b65c30790e205b1cd03"
     },
     {
       "full_name": "Shreyas-prog108/stock-alpha",
       "generator": "v0",
       "evidence": "README: '*Automatically synced with your [v0.app](https://v0.app) deployments*' + 'Built with v0.app' badge (v0.app/chat/hskGhcPxbD7)",
-      "stack_hints": "Next.js + shadcn/Radix UI — stock analysis app"
+      "stack_hints": "Next.js + shadcn/Radix UI — stock analysis app",
+      "pinned_sha": "10142569640ae6a248f223d8ef5b9d5fbf69825d"
     },
     {
       "full_name": "roy2392/llm-dj-mcp",
       "generator": "v0",
       "evidence": "README: v0.dev sync banner + 'Built with v0.dev' badge (v0.dev/chat/projects/fQ7quon6Ego)",
-      "stack_hints": "Next.js + shadcn/Radix UI + @ai-sdk/groq (Vercel AI SDK with Groq) — LLM DJ app with MCP"
+      "stack_hints": "Next.js + shadcn/Radix UI + @ai-sdk/groq (Vercel AI SDK with Groq) — LLM DJ app with MCP",
+      "pinned_sha": "e3761c77b1f0780fa081a8388c96d6584879aa9b"
     },
     {
       "full_name": "agustinkassis/lawallet-auditor",
       "generator": "v0",
       "evidence": "README: v0.app sync banner + 'Built with v0.app' badge (v0.app/chat/projects/I09rubtFgU2)",
-      "stack_hints": "Next.js + shadcn/Radix UI — LaWallet (Lightning wallet) auditor"
+      "stack_hints": "Next.js + shadcn/Radix UI — LaWallet (Lightning wallet) auditor",
+      "pinned_sha": "5a99a99b31f31200f91f1d3689ce5677ab2806ec"
     },
     {
       "full_name": "ViggoZ/json-translate",
       "generator": "cursor",
       "evidence": "README badge: 'Built with Cursor' shield linking to cursor.sh",
-      "stack_hints": "Next.js/React + Tailwind + Radix/headlessui, TypeScript — JSON i18n translation tool, 274 stars"
+      "stack_hints": "Next.js/React + Tailwind + Radix/headlessui, TypeScript — JSON i18n translation tool, 274 stars",
+      "pinned_sha": "02526f0e0e4f67211aaffe0266084edc849d7fcf"
     },
     {
       "full_name": "nuance-dev/guia",
       "generator": "cursor",
       "evidence": "README: 'Built with Cursor and Claude 3.5 Sonnet'",
-      "stack_hints": "Swift/SwiftUI macOS app — decision-making helper, 27 stars"
+      "stack_hints": "Swift/SwiftUI macOS app — decision-making helper, 27 stars",
+      "pinned_sha": "b6d4552c328ddf4f3b80e2ea655217b79270d92a"
     },
     {
       "full_name": "kamilstanuch/DesktopDeclutter",
       "generator": "cursor",
       "evidence": "README: 'Built with SwiftUI using Cursor and Composer-1'",
-      "stack_hints": "Swift/SwiftUI macOS app — swipe-based desktop decluttering, 25 stars"
+      "stack_hints": "Swift/SwiftUI macOS app — swipe-based desktop decluttering, 25 stars",
+      "pinned_sha": "2125f5f03669a07aa0d4febea2e707c4947dd237"
     },
     {
       "full_name": "drewster99/chessgame",
       "generator": "cursor",
       "evidence": "README: 'built almost entirely using Cursor.AI. I didn't write a single line of code'; repo description says 'built with Cursor.AI'",
-      "stack_hints": "Swift executable package, macOS chess game"
+      "stack_hints": "Swift executable package, macOS chess game",
+      "pinned_sha": "26ceb5fcc0efbb6ef02a6bc1a2abe835c8f04cfd"
     }
-  ]
+  ],
+  "pinned": "2026-09-03"
 }
