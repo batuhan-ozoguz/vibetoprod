@@ -1,0 +1,1213 @@
+{
+  "version": 1,
+  "notes": "Dependency matching is EXACT package name (or explicit list); entries ending with \"/\" match scoped-package prefixes. Fixes spike finding: next-themes must not trigger the next rule. Hosting rules carry priority; the detector reports only the highest-priority hosting hit as primary. env-key rules match variable NAMES in .env.example-style files. Seeded from awslabs/agent-plugins deploy-on-aws (Apache-2.0) detection tables.",
+  "implies_values": [
+    "hosting",
+    "server",
+    "database",
+    "auth",
+    "storage",
+    "queue",
+    "cache",
+    "cron",
+    "email",
+    "realtime",
+    "ai-api",
+    "payments",
+    "analytics",
+    "search",
+    "web3-rpc"
+  ],
+  "rules": [
+    {
+      "id": "hosting-nextjs",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "next"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Vercel",
+        "alternatives": [
+          "Netlify",
+          "Cloudflare Pages",
+          "Railway"
+        ],
+        "aws_equivalent": "Amplify Hosting"
+      },
+      "confidence": "high",
+      "source": "aws-plugin",
+      "priority": 10
+    },
+    {
+      "id": "hosting-vite",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "vite"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Cloudflare Pages",
+        "alternatives": [
+          "Vercel",
+          "Netlify"
+        ],
+        "aws_equivalent": "Amplify Hosting"
+      },
+      "confidence": "high",
+      "source": "aws-plugin",
+      "priority": 5
+    },
+    {
+      "id": "hosting-react-router",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "react-router",
+          "react-router-dom",
+          "@react-router/node"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Vercel",
+        "alternatives": [
+          "Cloudflare Pages",
+          "Railway"
+        ],
+        "aws_equivalent": "Amplify Hosting"
+      },
+      "confidence": "medium",
+      "source": "aws-plugin",
+      "priority": 8
+    },
+    {
+      "id": "hosting-astro",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "astro"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Cloudflare Pages",
+        "alternatives": [
+          "Vercel",
+          "Netlify"
+        ],
+        "aws_equivalent": "Amplify Hosting"
+      },
+      "confidence": "high",
+      "source": "aws-plugin",
+      "priority": 9
+    },
+    {
+      "id": "hosting-sveltekit",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@sveltejs/kit"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Vercel",
+        "alternatives": [
+          "Cloudflare Pages",
+          "Netlify"
+        ],
+        "aws_equivalent": "Amplify Hosting"
+      },
+      "confidence": "high",
+      "source": "aws-plugin",
+      "priority": 9
+    },
+    {
+      "id": "hosting-dockerfile",
+      "signal": {
+        "type": "file",
+        "match": "Dockerfile"
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Railway",
+        "alternatives": [
+          "Fly.io",
+          "Render"
+        ],
+        "aws_equivalent": "ECS Fargate + ALB"
+      },
+      "confidence": "high",
+      "source": "aws-plugin",
+      "priority": 3
+    },
+    {
+      "id": "db-prisma",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@prisma/client"
+        ]
+      },
+      "implies": "database",
+      "platforms": {
+        "recommended": "Neon",
+        "alternatives": [
+          "Supabase",
+          "Railway Postgres"
+        ],
+        "aws_equivalent": "Aurora Serverless v2 (PostgreSQL)"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "db-drizzle",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "drizzle-orm"
+        ]
+      },
+      "implies": "database",
+      "platforms": {
+        "recommended": "Neon",
+        "alternatives": [
+          "Supabase",
+          "Railway Postgres"
+        ],
+        "aws_equivalent": "Aurora Serverless v2 (PostgreSQL)"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "db-pg",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "pg"
+        ]
+      },
+      "implies": "database",
+      "platforms": {
+        "recommended": "Neon",
+        "alternatives": [
+          "Supabase",
+          "Railway Postgres"
+        ],
+        "aws_equivalent": "Aurora Serverless v2 (PostgreSQL)"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "db-mysql2",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "mysql2"
+        ]
+      },
+      "implies": "database",
+      "platforms": {
+        "recommended": "Railway (MySQL)",
+        "alternatives": [
+          "PlanetScale"
+        ],
+        "aws_equivalent": "Aurora Serverless v2 (MySQL)"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "db-mongoose",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "mongoose"
+        ]
+      },
+      "implies": "database",
+      "platforms": {
+        "recommended": "Railway (MongoDB)",
+        "alternatives": [
+          "MongoDB Atlas"
+        ],
+        "aws_equivalent": "Amazon DocumentDB Serverless"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "supabase-db",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@supabase/supabase-js"
+        ]
+      },
+      "implies": "database",
+      "platforms": {
+        "recommended": "Supabase",
+        "alternatives": [
+          "Neon"
+        ],
+        "aws_equivalent": "Aurora Serverless v2 (PostgreSQL)"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "supabase-auth",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@supabase/supabase-js"
+        ]
+      },
+      "implies": "auth",
+      "platforms": {
+        "recommended": "Supabase",
+        "alternatives": [
+          "Clerk"
+        ],
+        "aws_equivalent": "Amazon Cognito"
+      },
+      "confidence": "medium",
+      "source": "original"
+    },
+    {
+      "id": "supabase-storage",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@supabase/supabase-js"
+        ]
+      },
+      "implies": "storage",
+      "platforms": {
+        "recommended": "Supabase",
+        "alternatives": [
+          "Cloudflare R2"
+        ],
+        "aws_equivalent": "S3"
+      },
+      "confidence": "medium",
+      "source": "original"
+    },
+    {
+      "id": "auth-nextauth",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "next-auth"
+        ]
+      },
+      "implies": "auth",
+      "platforms": {
+        "recommended": "Auth.js (self-hosted, runs on the hosting platform)",
+        "alternatives": [
+          "Clerk",
+          "Auth0"
+        ],
+        "aws_equivalent": "Amazon Cognito"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "auth-clerk",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@clerk/"
+        ]
+      },
+      "implies": "auth",
+      "platforms": {
+        "recommended": "Clerk",
+        "alternatives": [
+          "Auth0",
+          "Supabase Auth"
+        ],
+        "aws_equivalent": "Amazon Cognito"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "auth-auth0",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@auth0/"
+        ]
+      },
+      "implies": "auth",
+      "platforms": {
+        "recommended": "Auth0",
+        "alternatives": [
+          "Clerk",
+          "Supabase Auth"
+        ],
+        "aws_equivalent": "Amazon Cognito"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "payments-stripe",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "stripe"
+        ]
+      },
+      "implies": "payments",
+      "platforms": {
+        "recommended": "Stripe",
+        "alternatives": [
+          "Paddle",
+          "Lemon Squeezy"
+        ],
+        "aws_equivalent": "none (no AWS-managed equivalent)"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "storage-s3-sdk",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@aws-sdk/client-s3"
+        ]
+      },
+      "implies": "storage",
+      "platforms": {
+        "recommended": "Cloudflare R2 (S3-compatible API)",
+        "alternatives": [
+          "AWS S3",
+          "Backblaze B2"
+        ],
+        "aws_equivalent": "S3"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "storage-uploadthing",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "uploadthing"
+        ]
+      },
+      "implies": "storage",
+      "platforms": {
+        "recommended": "UploadThing",
+        "alternatives": [
+          "Cloudflare R2",
+          "Supabase Storage"
+        ],
+        "aws_equivalent": "S3"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "storage-cloudinary",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "cloudinary"
+        ]
+      },
+      "implies": "storage",
+      "platforms": {
+        "recommended": "Cloudinary",
+        "alternatives": [
+          "Cloudflare Images",
+          "UploadThing"
+        ],
+        "aws_equivalent": "S3 + CloudFront"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "queue-bullmq",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "bullmq"
+        ]
+      },
+      "implies": "queue",
+      "platforms": {
+        "recommended": "Upstash (Redis)",
+        "alternatives": [
+          "Railway Redis"
+        ],
+        "aws_equivalent": "ElastiCache Serverless (Redis); SQS if refactoring off BullMQ"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "cache-ioredis",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "ioredis"
+        ]
+      },
+      "implies": "cache",
+      "platforms": {
+        "recommended": "Upstash (Redis)",
+        "alternatives": [
+          "Railway Redis"
+        ],
+        "aws_equivalent": "ElastiCache Serverless"
+      },
+      "confidence": "medium",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "cache-upstash-redis",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@upstash/redis"
+        ]
+      },
+      "implies": "cache",
+      "platforms": {
+        "recommended": "Upstash",
+        "alternatives": [],
+        "aws_equivalent": "ElastiCache Serverless"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "cron-node-cron",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "node-cron"
+        ]
+      },
+      "implies": "cron",
+      "platforms": {
+        "recommended": "Railway (long-running process)",
+        "alternatives": [
+          "Vercel Cron (requires refactor to route handlers)"
+        ],
+        "aws_equivalent": "EventBridge + Lambda"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "cron-vercel-json",
+      "signal": {
+        "type": "config-key",
+        "match": "vercel.json: crons"
+      },
+      "implies": "cron",
+      "platforms": {
+        "recommended": "Vercel Cron",
+        "alternatives": [
+          "Cloudflare Workers Cron Triggers"
+        ],
+        "aws_equivalent": "EventBridge + Lambda"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "email-resend",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "resend"
+        ]
+      },
+      "implies": "email",
+      "platforms": {
+        "recommended": "Resend",
+        "alternatives": [
+          "Postmark",
+          "SendGrid"
+        ],
+        "aws_equivalent": "SES"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "email-nodemailer",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "nodemailer"
+        ]
+      },
+      "implies": "email",
+      "platforms": {
+        "recommended": "Resend (SMTP)",
+        "alternatives": [
+          "SendGrid",
+          "Postmark",
+          "SES SMTP"
+        ],
+        "aws_equivalent": "SES"
+      },
+      "confidence": "medium",
+      "source": "original"
+    },
+    {
+      "id": "email-sendgrid",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@sendgrid/mail"
+        ]
+      },
+      "implies": "email",
+      "platforms": {
+        "recommended": "SendGrid",
+        "alternatives": [
+          "Resend",
+          "Postmark"
+        ],
+        "aws_equivalent": "SES"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "realtime-socketio",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "socket.io"
+        ]
+      },
+      "implies": "realtime",
+      "platforms": {
+        "recommended": "Railway (needs a long-lived server; not deployable on Vercel serverless)",
+        "alternatives": [
+          "Ably",
+          "Pusher"
+        ],
+        "aws_equivalent": "ECS Fargate + ALB (WebSockets)"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "realtime-pusher",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "pusher"
+        ]
+      },
+      "implies": "realtime",
+      "platforms": {
+        "recommended": "Pusher",
+        "alternatives": [
+          "Ably",
+          "Supabase Realtime"
+        ],
+        "aws_equivalent": "API Gateway WebSockets"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "realtime-ably",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "ably"
+        ]
+      },
+      "implies": "realtime",
+      "platforms": {
+        "recommended": "Ably",
+        "alternatives": [
+          "Pusher",
+          "Supabase Realtime"
+        ],
+        "aws_equivalent": "API Gateway WebSockets"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "ai-openai",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "openai"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "OpenAI API",
+        "alternatives": [
+          "Azure OpenAI"
+        ],
+        "aws_equivalent": "Amazon Bedrock"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "ai-anthropic",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@anthropic-ai/"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "Anthropic API",
+        "alternatives": [
+          "Amazon Bedrock",
+          "Google Vertex AI"
+        ],
+        "aws_equivalent": "Amazon Bedrock (Claude)"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "ai-google",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@google/generative-ai"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "Google Gemini API",
+        "alternatives": [
+          "Google Vertex AI"
+        ],
+        "aws_equivalent": "Amazon Bedrock"
+      },
+      "confidence": "high",
+      "source": "original"
+    },
+    {
+      "id": "search-algolia",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "algoliasearch"
+        ]
+      },
+      "implies": "search",
+      "platforms": {
+        "recommended": "Algolia",
+        "alternatives": [
+          "Meilisearch Cloud",
+          "Typesense Cloud"
+        ],
+        "aws_equivalent": "OpenSearch Serverless"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "search-meilisearch",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "meilisearch"
+        ]
+      },
+      "implies": "search",
+      "platforms": {
+        "recommended": "Meilisearch Cloud",
+        "alternatives": [
+          "Algolia",
+          "Railway (self-hosted Meilisearch)"
+        ],
+        "aws_equivalent": "OpenSearch Serverless"
+      },
+      "confidence": "high",
+      "source": "aws-plugin"
+    },
+    {
+      "id": "firebase-auth",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "firebase"
+        ]
+      },
+      "implies": "auth",
+      "platforms": {
+        "recommended": "Firebase Auth",
+        "alternatives": [
+          "Supabase Auth",
+          "Clerk"
+        ],
+        "aws_equivalent": "Cognito"
+      },
+      "confidence": "medium",
+      "source": "spike-v1"
+    },
+    {
+      "id": "firebase-db",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "firebase"
+        ]
+      },
+      "implies": "database",
+      "platforms": {
+        "recommended": "Firestore",
+        "alternatives": [
+          "Supabase"
+        ],
+        "aws_equivalent": "DynamoDB"
+      },
+      "confidence": "medium",
+      "source": "spike-v1"
+    },
+    {
+      "id": "firebase-storage",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "firebase"
+        ]
+      },
+      "implies": "storage",
+      "platforms": {
+        "recommended": "Firebase Storage",
+        "alternatives": [
+          "Supabase Storage",
+          "Cloudflare R2"
+        ],
+        "aws_equivalent": "S3"
+      },
+      "confidence": "medium",
+      "source": "spike-v1"
+    },
+    {
+      "id": "server-express",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "express"
+        ]
+      },
+      "implies": "server",
+      "platforms": {
+        "recommended": "Railway",
+        "alternatives": [
+          "Render",
+          "Fly.io"
+        ],
+        "aws_equivalent": "App Runner / ECS Fargate"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "server-fastify",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "fastify"
+        ]
+      },
+      "implies": "server",
+      "platforms": {
+        "recommended": "Railway",
+        "alternatives": [
+          "Render",
+          "Fly.io"
+        ],
+        "aws_equivalent": "App Runner / ECS Fargate"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "server-koa",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "koa"
+        ]
+      },
+      "implies": "server",
+      "platforms": {
+        "recommended": "Railway",
+        "alternatives": [
+          "Render",
+          "Fly.io"
+        ],
+        "aws_equivalent": "App Runner / ECS Fargate"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "server-hono",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "hono"
+        ]
+      },
+      "implies": "server",
+      "platforms": {
+        "recommended": "Cloudflare Workers",
+        "alternatives": [
+          "Railway",
+          "Fly.io"
+        ],
+        "aws_equivalent": "Lambda"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "server-nestjs",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@nestjs/core"
+        ]
+      },
+      "implies": "server",
+      "platforms": {
+        "recommended": "Railway",
+        "alternatives": [
+          "Render",
+          "Fly.io"
+        ],
+        "aws_equivalent": "App Runner / ECS Fargate"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "server-java-maven",
+      "signal": {
+        "type": "file",
+        "match": [
+          "pom.xml",
+          "backend/pom.xml",
+          "server/pom.xml"
+        ]
+      },
+      "implies": "server",
+      "platforms": {
+        "recommended": "Railway",
+        "alternatives": [
+          "Render",
+          "Fly.io"
+        ],
+        "aws_equivalent": "Elastic Beanstalk / ECS"
+      },
+      "confidence": "medium",
+      "source": "spike-v1"
+    },
+    {
+      "id": "server-python-reqs",
+      "signal": {
+        "type": "file",
+        "match": [
+          "requirements.txt",
+          "backend/requirements.txt"
+        ]
+      },
+      "implies": "server",
+      "platforms": {
+        "recommended": "Railway",
+        "alternatives": [
+          "Render",
+          "Fly.io"
+        ],
+        "aws_equivalent": "Elastic Beanstalk / App Runner"
+      },
+      "confidence": "medium",
+      "source": "spike-v1"
+    },
+    {
+      "id": "hosting-angular",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@angular/core"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Cloudflare Pages",
+        "alternatives": [
+          "Vercel",
+          "Netlify"
+        ],
+        "aws_equivalent": "Amplify Hosting"
+      },
+      "confidence": "high",
+      "source": "spike-v1",
+      "priority": 8
+    },
+    {
+      "id": "ai-env-anthropic",
+      "signal": {
+        "type": "env-key",
+        "match": [
+          "ANTHROPIC_API_KEY"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "Anthropic API",
+        "alternatives": [],
+        "aws_equivalent": "Bedrock"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "ai-env-openai",
+      "signal": {
+        "type": "env-key",
+        "match": [
+          "OPENAI_API_KEY"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "OpenAI API",
+        "alternatives": [],
+        "aws_equivalent": "Bedrock"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "ai-env-google",
+      "signal": {
+        "type": "env-key",
+        "match": [
+          "GOOGLE_AI_API_KEY",
+          "GEMINI_API_KEY"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "Google AI API",
+        "alternatives": [],
+        "aws_equivalent": "Bedrock"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "ai-env-openrouter",
+      "signal": {
+        "type": "env-key",
+        "match": [
+          "OPENROUTER_API_KEY"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "OpenRouter",
+        "alternatives": [],
+        "aws_equivalent": "Bedrock"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "ai-env-groq",
+      "signal": {
+        "type": "env-key",
+        "match": [
+          "GROQ_API_KEY"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "Groq API",
+        "alternatives": [],
+        "aws_equivalent": "Bedrock"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "email-env-resend",
+      "signal": {
+        "type": "env-key",
+        "match": [
+          "RESEND_API_KEY"
+        ]
+      },
+      "implies": "email",
+      "platforms": {
+        "recommended": "Resend",
+        "alternatives": [
+          "SendGrid"
+        ],
+        "aws_equivalent": "SES"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "payments-env-stripe",
+      "signal": {
+        "type": "env-key",
+        "match": [
+          "STRIPE_SECRET_KEY"
+        ]
+      },
+      "implies": "payments",
+      "platforms": {
+        "recommended": "Stripe",
+        "alternatives": [],
+        "aws_equivalent": "-"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "ai-vercel-sdk",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "ai"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "Vercel AI SDK + provider",
+        "alternatives": [],
+        "aws_equivalent": "Bedrock"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "ai-sdk-scoped",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@ai-sdk/"
+        ]
+      },
+      "implies": "ai-api",
+      "platforms": {
+        "recommended": "Vercel AI SDK provider",
+        "alternatives": [],
+        "aws_equivalent": "Bedrock"
+      },
+      "confidence": "high",
+      "source": "spike-v1"
+    },
+    {
+      "id": "web3-evm",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "wagmi",
+          "viem",
+          "ethers"
+        ]
+      },
+      "implies": "web3-rpc",
+      "platforms": {
+        "recommended": "Alchemy",
+        "alternatives": [
+          "Infura",
+          "public RPC"
+        ],
+        "aws_equivalent": "Managed Blockchain"
+      },
+      "confidence": "medium",
+      "source": "spike-v1"
+    },
+    {
+      "id": "web3-solana",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@solana/web3.js"
+        ]
+      },
+      "implies": "web3-rpc",
+      "platforms": {
+        "recommended": "Helius",
+        "alternatives": [
+          "QuickNode"
+        ],
+        "aws_equivalent": "-"
+      },
+      "confidence": "medium",
+      "source": "spike-v1"
+    },
+    {
+      "id": "hosting-cloudflare-wrangler",
+      "signal": {
+        "type": "file",
+        "match": [
+          "wrangler.toml",
+          "wrangler.jsonc"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Cloudflare (Pages/Workers)",
+        "alternatives": [],
+        "aws_equivalent": "-"
+      },
+      "confidence": "high",
+      "source": "spike-v1",
+      "priority": 100
+    },
+    {
+      "id": "hosting-cf-next-on-pages",
+      "signal": {
+        "type": "dependency",
+        "match": [
+          "@cloudflare/next-on-pages",
+          "@opennextjs/cloudflare"
+        ]
+      },
+      "implies": "hosting",
+      "platforms": {
+        "recommended": "Cloudflare Pages",
+        "alternatives": [],
+        "aws_equivalent": "-"
+      },
+      "confidence": "high",
+      "source": "spike-v1",
+      "priority": 100
+    }
+  ]
+}

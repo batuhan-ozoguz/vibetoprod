@@ -1,0 +1,9 @@
+vibetoprod
+Copyright (c) 2026 Batuhan Özoğuz
+
+The detection ruleset (rules/ruleset.json) is seeded in part from the
+detection and service-mapping tables of the "deploy-on-aws" agent plugin,
+https://github.com/awslabs/agent-plugins, Copyright Amazon.com, Inc. or its
+affiliates, licensed under the Apache License, Version 2.0
+(http://www.apache.org/licenses/LICENSE-2.0). Rules derived from that source
+are marked "source": "aws-plugin".
