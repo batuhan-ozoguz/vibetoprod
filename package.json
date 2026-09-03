@@ -1,6 +1,6 @@
 {
   "name": "vibetoprod",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "From vibe to production — analyzes your repo and plans the services, costs and architecture it needs to go live.",
   "bin": {
     "vibetoprod": "bin/vibetoprod.js",
