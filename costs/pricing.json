@@ -1,0 +1,164 @@
+{
+  "as_of": "2026-09",
+  "disclaimer": "Prices read from the platforms' public pricing pages on the as_of date. Ranges are monthly USD for a typical app at each tier; your usage may differ. Entries without numbers were not price-verified for this release.",
+  "tiers": {
+    "hobby": "side project: ~1k visits/mo, no real load",
+    "launch": "first real users: ~10k visits/mo",
+    "growing": "traction: ~100k visits/mo"
+  },
+  "aliases": {
+    "Vercel": "vercel", "Vercel Cron": "vercel",
+    "Cloudflare (Pages/Workers)": "cloudflare", "Cloudflare Pages": "cloudflare",
+    "Cloudflare Workers": "cloudflare", "Cloudflare R2 (S3-compatible API)": "cloudflare",
+    "Railway": "railway", "Railway (MongoDB)": "railway", "Railway (MySQL)": "railway",
+    "Railway (long-running process)": "railway",
+    "Railway (needs a long-lived server; not deployable on Vercel serverless)": "railway",
+    "Supabase": "supabase", "Neon": "neon",
+    "Firebase Auth": "firebase", "Firebase Storage": "firebase", "Firestore": "firebase",
+    "Clerk": "clerk", "Auth0": "auth0",
+    "Auth.js (self-hosted, runs on the hosting platform)": "authjs",
+    "Upstash": "upstash", "Upstash (Redis)": "upstash",
+    "Resend": "resend", "Resend (SMTP)": "resend", "SendGrid": "sendgrid",
+    "Anthropic API": "ai", "OpenAI API": "ai", "Google AI API": "ai", "Google Gemini API": "ai",
+    "Groq API": "ai", "OpenRouter": "ai", "Vercel AI SDK + provider": "ai", "Vercel AI SDK provider": "ai",
+    "Stripe": "stripe", "Alchemy": "web3", "Helius": "web3",
+    "Cloudinary": "cloudinary", "UploadThing": "uploadthing",
+    "Ably": "realtime-saas", "Pusher": "realtime-saas",
+    "Algolia": "search-saas", "Meilisearch Cloud": "search-saas"
+  },
+  "platforms": {
+    "vercel": {
+      "name": "Vercel",
+      "tiers": { "hobby": [0, 0], "launch": [0, 20], "growing": [20, 40] },
+      "free_tier": "Hobby: 100GB transfer, 1M function invocations/mo — non-commercial use only",
+      "note": "a commercial app needs Pro ($20/user/mo); small apps rarely exceed included usage",
+      "source": "https://vercel.com/pricing"
+    },
+    "cloudflare": {
+      "name": "Cloudflare",
+      "tiers": { "hobby": [0, 0], "launch": [0, 5], "growing": [5, 10] },
+      "free_tier": "Pages: unlimited static requests, no bandwidth charges; Workers: 100k requests/day",
+      "note": "Workers Paid $5/mo (10M requests); R2 storage has no egress fees",
+      "source": "https://developers.cloudflare.com/workers/platform/pricing/"
+    },
+    "railway": {
+      "name": "Railway",
+      "tiers": { "hobby": [5, 5], "launch": [5, 10], "growing": [10, 25] },
+      "free_tier": "Free plan has only $1/mo usage credit — too small for an always-on service",
+      "note": "Hobby $5/mo includes $5 usage; ~$10/GB RAM-month beyond credits; databases run as services",
+      "source": "https://railway.com/pricing"
+    },
+    "supabase": {
+      "name": "Supabase",
+      "tiers": { "hobby": [0, 0], "launch": [0, 25], "growing": [25, 35] },
+      "free_tier": "500MB database, 50k MAUs, 1GB storage, 5GB egress; projects pause after 1 week idle",
+      "note": "Pro $25/mo (100k MAUs, 8GB disk, 250GB egress); one subscription covers db+auth+storage",
+      "source": "https://supabase.com/pricing"
+    },
+    "neon": {
+      "name": "Neon",
+      "tiers": { "hobby": [0, 0], "launch": [5, 25], "growing": [25, 50] },
+      "free_tier": "0.5GB storage, 100 compute-hours per project",
+      "note": "Launch plan is pure usage-based, no monthly minimum ($0.106/CU-hour, $0.35/GB-month)",
+      "source": "https://neon.com/pricing"
+    },
+    "firebase": {
+      "name": "Firebase",
+      "tiers": { "hobby": [0, 0], "launch": [0, 5], "growing": [5, 25] },
+      "free_tier": "Auth 50k MAUs; Firestore 1GiB + 50k reads/day; Storage 5GB",
+      "note": "Blaze is pay-as-you-go with the same free thresholds included; covers auth+db+storage",
+      "source": "https://firebase.google.com/pricing"
+    },
+    "clerk": {
+      "name": "Clerk",
+      "tiers": { "hobby": [0, 0], "launch": [0, 25], "growing": [25, 50] },
+      "free_tier": "50,000 MRUs (monthly retained users)",
+      "note": "Pro $25/mo; bills on retained users, not signups",
+      "source": "https://clerk.com/pricing"
+    },
+    "auth0": {
+      "name": "Auth0",
+      "tiers": null,
+      "free_tier": "free tier exists; limits not verified for this release",
+      "note": "pricing not verified — check the source before budgeting",
+      "source": "https://auth0.com/pricing"
+    },
+    "authjs": {
+      "name": "Auth.js (self-hosted)",
+      "tiers": { "hobby": [0, 0], "launch": [0, 0], "growing": [0, 0] },
+      "free_tier": "open-source library — runs on your hosting, no separate bill",
+      "note": "cost shows up as compute on your hosting platform, not as a subscription",
+      "source": "https://authjs.dev"
+    },
+    "upstash": {
+      "name": "Upstash",
+      "tiers": { "hobby": [0, 0], "launch": [1, 10], "growing": [10, 20] },
+      "free_tier": "Redis: 500k commands/mo, 256MB",
+      "note": "pay-as-you-go $0.20 per 100k commands; fixed plans from $10/mo",
+      "source": "https://upstash.com/pricing"
+    },
+    "resend": {
+      "name": "Resend",
+      "tiers": { "hobby": [0, 0], "launch": [0, 20], "growing": [20, 20] },
+      "free_tier": "3,000 emails/mo (100/day cap)",
+      "note": "Pro $20/mo for 50k emails",
+      "source": "https://resend.com/pricing"
+    },
+    "sendgrid": {
+      "name": "SendGrid",
+      "tiers": { "hobby": [0, 20], "launch": [20, 20], "growing": [20, 90] },
+      "free_tier": "no permanent free tier in 2026 — only a 60-day trial (100 emails/day)",
+      "note": "Essentials from $19.95/mo; consider Resend for a real free tier",
+      "source": "https://www.twilio.com/en-us/products/email-api/pricing"
+    },
+    "ai": {
+      "name": "AI API (usage-based)",
+      "tiers": { "hobby": [0, 5], "launch": [5, 30], "growing": [30, 150] },
+      "free_tier": "none — pay per token",
+      "note": "representative rates: Claude Sonnet 5 $2/$10 per 1M tokens, GPT-5 $1.25/$10, mini/haiku class ~5x cheaper; range assumes a few million tokens/mo",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "stripe": {
+      "name": "Stripe",
+      "tiers": { "hobby": [0, 0], "launch": [0, 0], "growing": [0, 0] },
+      "free_tier": "no monthly fee at all",
+      "note": "2.9% + $0.30 per card transaction — scales with revenue, not a subscription (~$32 on $1k/mo processed)",
+      "source": "https://stripe.com/pricing"
+    },
+    "web3": {
+      "name": "Web3 RPC (Alchemy)",
+      "tiers": { "hobby": [0, 0], "launch": [0, 13], "growing": [13, 45] },
+      "free_tier": "Alchemy: 30M compute units/mo, 25 req/s",
+      "note": "Alchemy rates; Solana-side (Helius) has a similar shape but was not price-verified",
+      "source": "https://www.alchemy.com/pricing"
+    },
+    "cloudinary": {
+      "name": "Cloudinary",
+      "tiers": { "hobby": [0, 0], "launch": [0, 0], "growing": [0, 99] },
+      "free_tier": "25 credits/mo (1 credit = 1k transformations or 1GB storage/bandwidth) — generous for small apps",
+      "note": "first paid step is a big jump: Plus $99/mo",
+      "source": "https://cloudinary.com/pricing"
+    },
+    "uploadthing": {
+      "name": "UploadThing",
+      "tiers": null,
+      "free_tier": "free tier exists; limits not verified for this release",
+      "note": "pricing not verified — check the source before budgeting",
+      "source": "https://uploadthing.com/pricing"
+    },
+    "realtime-saas": {
+      "name": "Realtime SaaS (Pusher/Ably)",
+      "tiers": null,
+      "free_tier": "both have free tiers; limits not verified for this release",
+      "note": "pricing not verified — self-hosting socket.io on your server platform is often $0 extra",
+      "source": "https://pusher.com/pricing"
+    },
+    "search-saas": {
+      "name": "Search SaaS (Algolia/Meilisearch)",
+      "tiers": null,
+      "free_tier": "free tiers exist; limits not verified for this release",
+      "note": "pricing not verified — check the source before budgeting",
+      "source": "https://www.algolia.com/pricing"
+    }
+  }
+}

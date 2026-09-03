@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { detect } from "../src/detect.mjs";
 import { resolveTarget } from "../src/clone.mjs";
+import { estimate } from "../src/costs.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -50,8 +51,11 @@ try {
 }
 result.repo = resolved.label;
 
+const pricing = JSON.parse(readFileSync(join(root, "costs/pricing.json"), "utf8"));
+const costs = estimate(result, ruleset, pricing);
+
 if (json) {
-  console.log(JSON.stringify(result, null, 2));
+  console.log(JSON.stringify({ ...result, costs }, null, 2));
   process.exit(0);
 }
 
@@ -78,4 +82,13 @@ for (const [need, hits] of Object.entries(byNeed)) {
   console.log(`  ${need.padEnd(10)} → ${top.rule.platforms.recommended}`);
   for (const h of hits) console.log(`             · ${h.evidence}`);
 }
+
+const usd = ([lo, hi]) => (lo === hi ? `$${lo}` : `$${lo}-${hi}`);
+console.log(`\n  estimated monthly cost (prices verified ${costs.as_of}):`);
+for (const it of costs.items) {
+  const price = it.tiers ? `${usd(it.tiers.launch)}/mo at launch` : "not priced — check platform";
+  console.log(`    ${it.platform.padEnd(24)} ${price}`);
+}
+for (const [tier, range] of Object.entries(costs.totals))
+  console.log(`    ${("total · " + tier).padEnd(24)} ${usd(range)}/mo  (${costs.tier_assumptions[tier]})`);
 console.log(`\n  ${result.signals_hit.length} signals, ${result.needs.length} needs. --json for details.\n`);
