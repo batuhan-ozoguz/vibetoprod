@@ -6,8 +6,20 @@
     "vibetoprod": "bin/vibetoprod.js",
     "v2p": "bin/vibetoprod.js"
   },
-  "files": ["bin"],
-  "keywords": ["vibe-coding", "deployment", "infrastructure", "cost-estimate", "architecture-diagram"],
+  "files": [
+    "bin",
+    "src",
+    "rules",
+    "costs",
+    "NOTICE"
+  ],
+  "keywords": [
+    "vibe-coding",
+    "deployment",
+    "infrastructure",
+    "cost-estimate",
+    "architecture-diagram"
+  ],
   "homepage": "https://vibetoprod.dev",
   "repository": {
     "type": "git",
@@ -15,5 +27,10 @@
   },
   "author": "Batuhan Özoğuz",
   "license": "MIT",
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
 }
