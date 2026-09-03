@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // vibetoprod — from vibe to production.
 // usage: vibetoprod <local-path | github-url | owner/repo> [--json] [--html <file>]
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { detect } from "../src/detect.mjs";
@@ -60,8 +60,17 @@ if (json) {
 }
 
 if (htmlOut) {
-  console.error("vibetoprod: --html lands with the report renderer (T4); use --json for now");
-  process.exit(1);
+  const { report } = await import("../src/report.mjs");
+  const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
+  writeFileSync(htmlOut, report({
+    repoLabel: resolved.label,
+    result,
+    costs,
+    generatedAt: new Date().toISOString().slice(0, 10),
+    version: pkg.version,
+  }));
+  console.log(`vibetoprod: plan written to ${htmlOut}`);
+  process.exit(0);
 }
 
 // human summary
