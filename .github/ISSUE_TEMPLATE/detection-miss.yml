@@ -1,0 +1,27 @@
+name: Detection miss
+description: The plan missed a service your app needs, or invented one it doesn't
+labels: [detection-miss]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Repository
+      description: Public repo URL (or describe the stack if private)
+      placeholder: https://github.com/you/your-app
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: vibetoprod --json output
+      description: Paste the output of `npx vibetoprod <repo> --json`
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What was wrong
+      description: Which service was missed or wrongly detected, and what in the repo proves it (a dependency, a config file, an env key)
+    validations:
+      required: true
