@@ -25,7 +25,8 @@ export function resolveTarget(target) {
   try {
     execFileSync(
       "git",
-      ["-c", "core.symlinks=false", "clone", "--depth", "1", "--no-tags", "--quiet", url, dir],
+      ["-c", "core.symlinks=false", "clone", "--depth", "1", "--no-tags",
+       "--filter=blob:limit=512k", "--quiet", url, dir],
       { stdio: ["ignore", "ignore", "pipe"], timeout: 120_000 }
     );
   } catch (e) {
